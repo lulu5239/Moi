@@ -1,1 +1,1 @@
-worker: node NeoflasH
+worker: node bot1
