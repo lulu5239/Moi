@@ -1289,4 +1289,4 @@ function emoji (couleur, nom, id) {
   }
 } // 
 
-client.login(tokens[mode]);
+client.login(tokens);
