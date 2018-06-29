@@ -45,7 +45,7 @@ var ancien_statut = "online"
 
 client.on('ready', () => {
   console.log("Prêt !");
-  client.user.setUsername("Lulu5239")
+  console.log(process.env.MESSAGE)
   setTimeout(function(){
     //client.user.setActivity("Visual Studio Code", "type:PLAYING")
     //client.user.setStatus("online")
@@ -54,43 +54,21 @@ client.on('ready', () => {
   var donnes = {}
 });
 
-client.on('message', (msg, mmb) => {
-
-if (donnes[msg.author.id]==undefined) {
-  donnes[msg.author.id] = {}
-  donnes[msg.author.id].messagesSent = 0
-  donnes[msg.author.id].prefixe = Prefixe
-}
-if (donnes[msg.author.id].prefixe==undefined) {
-  donnes[msg.author.id].prefixe = Prefixe
-}
-
-if(events.userID.length>0){
-  if(events.userID.includes(msg.author.id)) {
-    var x = 0
-    while (x < events.userID.length) {
-      if(msg.author.id == events.userID[x] && msg.channel.id == events.salonID[x]) {
-        events.action[x](msg)
-        events.userID[x] = "Erreur."
-      }
-      x++
-    }
-  }
-}
+client.on('message', (msg) => {
   
-if(msg.content.startsWith(prefixe)){
+if(true){
   
-  if (msg.content === (prefixe+'ping')) {
+  if (msg.content == (prefixe+'ping')) {
     msg.channel.send("Pong. "+(Date.now() - msg.createdTimestamp)+" (En millisecondes.)");
     Log(msg, "ping")
   }
 
-  if (msg.content === (prefixe + 'test')) {
+  if (msg.content == (prefixe + 'test')) {
     msg.reply('Test validé.');
     Log(msg, "test")
   }
 
-  if (msg.content === (prefixe + 'aide')) {
+  if (msg.content == (prefixe + 'aide')) {
     Log(msg, "aide")
     var couleur = couleur_auto(msg)
     var lembed = {
