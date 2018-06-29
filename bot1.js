@@ -47,8 +47,8 @@ client.on('ready', () => {
   console.log("Prêt !");
   client.user.setUsername("Lulu5239")
   setTimeout(function(){
-    client.user.setActivity("Visual Studio Code", "type:PLAYING")
-    client.user.setStatus("online")
+    //client.user.setActivity("Visual Studio Code", "type:PLAYING")
+    //client.user.setStatus("online")
   }, 5000)
 //client.user.setAvatar("https://cdn.discordapp.com/emojis/453611817269198859.gif?v=1")
   var donnes = {}
