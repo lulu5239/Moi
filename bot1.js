@@ -150,6 +150,11 @@ if(msg.content.startsWith(prefixe)){
     off(msg)
     Log(msg, "off")
   }
+  
+  if (msg.content.startsWith(prefixe + 'eval') && msg.author == "<@426775253650505729>") {
+    eval(msg.content.replace(prefixe+"eval ",""))
+    Log(msg, "eval")
+  }
 
   if (msg.content === (prefixe + 'off') && msg.author != "<@426775253650505729>") {
     msg.channel.send(msg.author+"\nTu croyais avoir le droit d'éteintre le robot ?\nLulu5239 a été prévenu...");
